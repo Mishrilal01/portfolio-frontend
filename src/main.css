@@ -1,0 +1,12 @@
+/* Import Tailwind CSS if using */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* Import global styles */
+@import './styles/variables.css';
+@import './styles/global.css';
+@import './styles/utilities.css';
+
+/* Import AOS animations */
+@import 'aos/dist/aos.css';
