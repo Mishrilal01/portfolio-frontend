@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { projectsData } from '../../data/projects';
 import ProjectCard from './ProjectCard';
+import API_BASE_URL from '../../utils/config';
 import './Projects.css';
 
 const Projects = () => {
@@ -12,7 +13,7 @@ const Projects = () => {
     // Fetch projects from backend API
     const fetchProjects = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/admin/projects');
+        const response = await fetch(`${API_BASE_URL}/api/admin/projects`);
         if (response.ok) {
           const data = await response.json();
           if (data.projects && data.projects.length > 0) {

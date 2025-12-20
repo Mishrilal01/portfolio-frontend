@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { skillsData } from '../../data/skills';
+import API_BASE_URL from '../../utils/config';
 import './Skills.css';
 
 const Skills = () => {
@@ -11,7 +12,7 @@ const Skills = () => {
     // Fetch skills from backend API
     const fetchSkills = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/admin/skills');
+        const response = await fetch(`${API_BASE_URL}/api/admin/skills`);
         if (response.ok) {
           const data = await response.json();
           if (data.skills && data.skills.length > 0) {
