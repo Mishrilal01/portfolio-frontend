@@ -22,7 +22,7 @@ const Projects = () => {
         }
       } catch (err) {
         console.error('Error fetching projects:', err);
-        setError('Using local data');
+        //setError('Using local data');
         // Keep using local projectsData as fallback
       } finally {
         setLoading(false);

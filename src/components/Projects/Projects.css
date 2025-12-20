@@ -95,3 +95,60 @@
   border-radius: 20px;
   font-size: 0.8rem;
 }
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .projects {
+    padding: 3rem 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+
+  .project-content {
+    padding: 1rem;
+  }
+
+  .project-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-content p {
+    font-size: 0.9rem;
+  }
+
+  .btn-small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 2rem 0.75rem;
+  }
+
+  .project-image {
+    height: 160px;
+  }
+
+  .project-overlay {
+    gap: 0.5rem;
+  }
+
+  .btn-small {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+  }
+}

@@ -10,9 +10,9 @@ const ProjectCard = ({ project, index }) => {
       <div className="project-image">
         <img src={project.image} alt={project.title} />
         <div className="project-overlay">
-          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-small">
+          {/* <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-small">
             Live Demo
-          </a>
+          </a> */}
           <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-small">
             GitHub
           </a>
