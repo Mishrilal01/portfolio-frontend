@@ -1,3 +1,5 @@
+// FORCE REBUILD - API BASE URL FIX APPLIED
+
 import React, { useState, useEffect } from 'react';
 import { projectsData } from '../../data/projects';
 import ProjectCard from './ProjectCard';
