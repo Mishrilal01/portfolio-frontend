@@ -60,6 +60,88 @@
   margin-bottom: 1rem;
 }
 
+@media (max-width: 968px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-brand {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer .container {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  
+  .footer-brand {
+    margin: 0 auto;
+  }
+  
+  .footer-logo {
+    justify-content: center;
+    font-size: 2rem;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .footer-links {
+    justify-content: center;
+  }
+  
+  .footer-links li {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer .container {
+    padding: 2.5rem 1rem 1.25rem;
+  }
+  
+  .footer-content {
+    gap: 2rem;
+  }
+  
+  .footer-logo {
+    font-size: 1.75rem;
+  }
+  
+  .footer-tagline {
+    font-size: 0.9rem;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-links a,
+  .contact-item {
+    font-size: 0.9rem;
+  }
+  
+  .newsletter-input {
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+  
+  .newsletter-btn {
+    padding: 0.7rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
 /* Brand Section */
 .footer-brand {
   max-width: 400px;

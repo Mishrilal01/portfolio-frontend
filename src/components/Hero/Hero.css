@@ -11,6 +11,30 @@
   padding: 8rem 2rem 4rem;
 }
 
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .hero {
+    min-height: calc(100vh - 60px);
+    padding: 6rem 1.5rem 3rem;
+    animation: gradientFlow 30s ease-in-out infinite;
+  }
+  
+  /* Disable floating shapes on mobile */
+  .floating-shapes {
+    display: none;
+  }
+  
+  .shape {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 5rem 1rem 2rem;
+  }
+}
+
 @keyframes gradientFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -95,6 +119,17 @@
   75% {
     transform: translate(50px, -50px) rotate(270deg);
     opacity: 0.6;
+  }
+}
+
+/* Hide particles on mobile */
+@media (max-width: 768px) {
+  .particle {
+    display: none;
+  }
+  
+  .particles-background {
+    display: none;
   }
 }
 
@@ -228,6 +263,17 @@
   50% { background-position: 100% 50%; }
 }
 
+/* Slow down shimmer on mobile */
+@media (max-width: 768px) {
+  .highlight {
+    animation: shimmer 5s ease-in-out infinite;
+  }
+  
+  .typed-text {
+    animation: textGlow 4s ease-in-out infinite;
+  }
+}
+
 .hero-subtitle {
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   margin-bottom: 1.5rem;
@@ -287,6 +333,28 @@
   margin-bottom: 3rem;
   flex-wrap: wrap;
   animation: fadeIn 1s ease-out 1s backwards;
+}
+
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
 }
 
 .btn {
@@ -369,6 +437,43 @@
   gap: 3.5rem;
   margin-top: 2.5rem;
   animation: fadeIn 1s ease-out 1.2s backwards;
+}
+
+@media (max-width: 768px) {
+  .hero-stats {
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .stat-item {
+    padding: 0.75rem 1rem;
+    min-width: 100px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats {
+    gap: 1rem;
+  }
+  
+  .stat-item {
+    padding: 0.5rem 0.75rem;
+    min-width: 80px;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
 }
 
 .stat-item {

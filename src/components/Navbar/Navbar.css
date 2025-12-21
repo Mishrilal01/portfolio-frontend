@@ -26,6 +26,18 @@
   padding: 0 2rem;
 }
 
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 0.75rem;
+  }
+}
+
 .navbar-logo a {
   font-size: 1.8rem;
   font-weight: 800;
@@ -255,7 +267,7 @@
     backdrop-filter: blur(10px);
     width: 100%;
     text-align: center;
-    transition: 0.3s;
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     padding: 2rem 0;
     gap: 1.5rem;
