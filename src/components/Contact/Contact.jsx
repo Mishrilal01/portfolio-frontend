@@ -45,16 +45,27 @@ const Contact = () => {
         });
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
+        // Show specific error message from backend
         setStatus({
           type: 'error',
-          message: data.message || 'Failed to send message. Please try again.'
+          message: data.message || data.error || data.details || 'Failed to send message. Please try again.'
         });
       }
     } catch (error) {
       console.error('Contact form error:', error);
+      
+      // Provide more specific error messages
+      let errorMessage = 'An error occurred while sending your message.';
+      
+      if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        errorMessage = 'Unable to connect to server. Please check your internet connection.';
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+      
       setStatus({
         type: 'error',
-        message: 'Network error. Please check if the backend server is running.'
+        message: errorMessage
       });
     } finally {
       setLoading(false);
