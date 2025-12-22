@@ -1,5 +1,61 @@
 /* Additional utility styles for animations and effects */
 
+/* Mobile-first responsive utilities */
+.mobile-hidden {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+/* Responsive text utilities */
+.text-responsive-xl {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.text-responsive-lg {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.text-responsive-md {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+.text-responsive-sm {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+/* Container utilities for better mobile alignment */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
 /* Glassmorphism utility class */
 .glassmorphism {
   background: rgba(255, 255, 255, 0.1);
