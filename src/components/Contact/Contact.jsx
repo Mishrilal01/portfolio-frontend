@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import API_BASE_URL from '../../utils/config';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
@@ -28,39 +28,53 @@ const Contact = () => {
     setStatus({ type: '', message: '' });
 
     try {
-      const response = await fetch(`${API_BASE_URL}/api/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      // Get current time in readable format
+      const currentTime = new Date().toLocaleString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
       });
 
-      const data = await response.json();
+      // EmailJS configuration
+      const serviceID = 'service_eiiyotf';
+      const templateID = 'template_yudddcq';
+      const publicKey = 'dGmfYvpDtaVqMpHww';
 
-      if (response.ok && data.success) {
+      // Prepare template parameters
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        time: currentTime
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        serviceID,
+        templateID,
+        templateParams,
+        publicKey
+      );
+
+      if (response.status === 200) {
         setStatus({
           type: 'success',
-          message: 'Message sent successfully! Check your email for confirmation.'
+          message: 'Message sent successfully! I\'ll get back to you soon.'
         });
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
-        // Show specific error message from backend
-        setStatus({
-          type: 'error',
-          message: data.message || data.error || data.details || 'Failed to send message. Please try again.'
-        });
+        throw new Error('Failed to send message');
       }
     } catch (error) {
-      console.error('Contact form error:', error);
+      console.error('EmailJS error:', error);
       
-      // Provide more specific error messages
-      let errorMessage = 'An error occurred while sending your message.';
+      let errorMessage = 'Failed to send message. Please try again or email me directly.';
       
-      if (error.name === 'TypeError' && error.message.includes('fetch')) {
-        errorMessage = 'Unable to connect to server. Please check your internet connection.';
-      } else if (error.message) {
-        errorMessage = error.message;
+      if (error.text) {
+        errorMessage = `Error: ${error.text}`;
       }
       
       setStatus({
