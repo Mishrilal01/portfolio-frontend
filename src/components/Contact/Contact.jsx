@@ -28,27 +28,24 @@ const Contact = () => {
     setStatus({ type: '', message: '' });
 
     try {
-      // Get current time in readable format
-      const currentTime = new Date().toLocaleString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-      });
-
       // EmailJS configuration
       const serviceID = 'service_eiiyotf';
       const templateID = 'template_yudddcq';
       const publicKey = 'dGmfYvpDtaVqMpHww';
 
-      // Prepare template parameters
+      console.log('Sending email with params:', {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      });
+
+      // Prepare template parameters (matches your EmailJS template)
       const templateParams = {
         name: formData.name,
         email: formData.email,
-        message: formData.message,
-        time: currentTime
+        subject: formData.subject || 'No Subject',
+        message: formData.message
       };
 
       // Send email using EmailJS
@@ -70,11 +67,18 @@ const Contact = () => {
       }
     } catch (error) {
       console.error('EmailJS error:', error);
+      console.error('Error details:', {
+        message: error.message,
+        text: error.text,
+        status: error.status
+      });
       
       let errorMessage = 'Failed to send message. Please try again or email me directly.';
       
       if (error.text) {
         errorMessage = `Error: ${error.text}`;
+      } else if (error.message) {
+        errorMessage = `Error: ${error.message}`;
       }
       
       setStatus({
