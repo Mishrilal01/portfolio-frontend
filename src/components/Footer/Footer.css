@@ -222,18 +222,25 @@
   align-items: flex-end;
   justify-content: flex-start;
   margin-top: 2rem;
-  min-height: 150px;
+  min-height: clamp(120px, 30vw, 150px);
   width: 100%;
-  padding-left: 100px;
+  padding-left: clamp(50px, 20vw, 100px);
   padding-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .footer-floating-socials {
+    justify-content: center;
+    padding-left: 0;
+  }
 }
 
 .social-orbit-center {
   position: absolute;
-  left: 70px;
+  left: clamp(35px, 15vw, 70px);
   bottom: 20px;
-  width: 50px;
-  height: 50px;
+  width: clamp(35px, 10vw, 50px);
+  height: clamp(35px, 10vw, 50px);
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(236, 72, 153, 0.3));
   border-radius: 50%;
   display: flex;
@@ -243,9 +250,15 @@
   animation: centerPulse 3s ease-in-out infinite;
 }
 
+@media (max-width: 768px) {
+  .social-orbit-center {
+    display: none;
+  }
+}
+
 .orbit-pulse {
-  width: 30px;
-  height: 30px;
+  width: clamp(20px, 6vw, 30px);
+  height: clamp(20px, 6vw, 30px);
   background: white;
   border-radius: 50%;
   opacity: 0.8;
@@ -276,12 +289,12 @@
 
 .floating-social-badge {
   position: absolute;
-  left: 70px;
+  left: clamp(35px, 15vw, 70px);
   bottom: 20px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  padding: 1rem;
-  border-radius: 15px;
+  padding: clamp(0.6rem, 2vw, 1rem);
+  border-radius: clamp(10px, 2vw, 15px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -291,7 +304,16 @@
   transition: all 0.3s ease;
 }
 
+@media (max-width: 768px) {
+  .floating-social-badge {
+    left: 50%;
+    margin-left: 0;
+  }
+}
+
 .floating-social-badge svg {
+  width: clamp(18px, 5vw, 24px);
+  height: clamp(18px, 5vw, 24px);
   color: white;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   transition: transform 0.3s ease;
@@ -309,54 +331,109 @@
 
 /* Orbit Positions */
 .orbit-1 {
-  animation: orbit1 15s linear infinite;
+  animation: orbit1 30s linear infinite;
 }
 
 .orbit-2 {
-  animation: orbit2 15s linear infinite;
+  animation: orbit2 30s linear infinite;
 }
 
 .orbit-3 {
-  animation: orbit3 15s linear infinite;
+  animation: orbit3 30s linear infinite;
 }
 
 .orbit-4 {
-  animation: orbit4 15s linear infinite;
+  animation: orbit4 30s linear infinite;
 }
 
 @keyframes orbit1 {
   0% {
-    transform: rotate(0deg) translateX(100px) rotate(0deg);
+    transform: rotate(0deg) translateX(clamp(50px, 15vw, 70px)) rotate(0deg);
   }
   100% {
-    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    transform: rotate(360deg) translateX(clamp(50px, 15vw, 70px)) rotate(-360deg);
   }
 }
 
 @keyframes orbit2 {
   0% {
-    transform: rotate(90deg) translateX(100px) rotate(-90deg);
+    transform: rotate(90deg) translateX(clamp(50px, 15vw, 70px)) rotate(-90deg);
   }
   100% {
-    transform: rotate(450deg) translateX(100px) rotate(-450deg);
+    transform: rotate(450deg) translateX(clamp(50px, 15vw, 70px)) rotate(-450deg);
   }
 }
 
 @keyframes orbit3 {
   0% {
-    transform: rotate(180deg) translateX(100px) rotate(-180deg);
+    transform: rotate(180deg) translateX(clamp(50px, 15vw, 70px)) rotate(-180deg);
   }
   100% {
-    transform: rotate(540deg) translateX(100px) rotate(-540deg);
+    transform: rotate(540deg) translateX(clamp(50px, 15vw, 70px)) rotate(-540deg);
   }
 }
 
 @keyframes orbit4 {
   0% {
-    transform: rotate(270deg) translateX(100px) rotate(-270deg);
+    transform: rotate(270deg) translateX(clamp(50px, 15vw, 70px)) rotate(-270deg);
   }
   100% {
-    transform: rotate(630deg) translateX(100px) rotate(-630deg);
+    transform: rotate(630deg) translateX(clamp(50px, 15vw, 70px)) rotate(-630deg);
+  }
+}
+
+/* Zig-Zag Animations for Mobile - Vertical movement along horizontal line */
+@media (max-width: 768px) {
+  .orbit-1 {
+    animation: zigzag1 5s ease-in-out infinite;
+  }
+
+  .orbit-2 {
+    animation: zigzag2 5s ease-in-out infinite;
+  }
+
+  .orbit-3 {
+    animation: zigzag3 5s ease-in-out infinite;
+  }
+
+  .orbit-4 {
+    animation: zigzag4 5s ease-in-out infinite;
+  }
+}
+
+@keyframes zigzag1 {
+  0%, 100% {
+    transform: translate(-120px, 0);
+  }
+  50% {
+    transform: translate(-120px, -50px);
+  }
+}
+
+@keyframes zigzag2 {
+  0%, 100% {
+    transform: translate(-40px, -50px);
+  }
+  50% {
+    transform: translate(-40px, 0);
+  }
+}
+
+@keyframes zigzag3 {
+  0%, 100% {
+    transform: translate(40px, 0);
+  }
+  50% {
+    transform: translate(40px, -50px);
+  }
+}
+
+@keyframes zigzag4 {
+  0%, 100% {
+    transform: translate(120px, -50px);
+  }
+  50% {
+    transform: translate(120px, 0);
   }
 }
 
@@ -419,10 +496,30 @@
   border-radius: 2px;
 }
 
+@media (max-width: 768px) {
+  .footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .footer-links {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+  }
+  
+  .footer-section:nth-child(3) .footer-links {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 }
 
 .footer-links li {
