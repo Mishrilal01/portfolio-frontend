@@ -7,7 +7,7 @@
   overflow: hidden;
   background: var(--gradient-animated);
   background-size: 400% 400%;
-  animation: gradientFlow 15s ease infinite;
+  animation: gradientFlow 30s ease infinite;
   padding: 10rem 2rem 4rem;
   z-index: 1;
 }
@@ -17,6 +17,7 @@
   .hero {
     min-height: auto;
     padding: 6rem 1rem 3rem;
+    animation: gradientFlow 40s ease infinite !important;
   }
 
   .hero-container {
@@ -48,13 +49,21 @@
   animation: floatParticle 20s infinite ease-in-out;
 }
 
+/* Slow down particles on mobile for smoother experience */
+@media (max-width: 768px) {
+  .particle {
+    animation-duration: 45s !important;
+    opacity: 0.3;
+  }
+}
+
 .particle:nth-child(1) {
   width: 80px;
   height: 80px;
   top: 20%;
   left: 10%;
   animation-delay: 0s;
-  animation-duration: 25s;
+  animation-duration: 20s;
 }
 
 .particle:nth-child(2) {
@@ -195,7 +204,7 @@
   gap: 4rem;
   align-items: center;
   position: relative;
-  z-index: 2;
+  z-index: 1;
   box-sizing: border-box;
 }
 
@@ -421,7 +430,7 @@
   animation: fadeIn 1s ease-out 1.2s backwards;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .hero-stats {
     gap: 1.5rem;
     margin-top: 2rem;
@@ -496,7 +505,7 @@
 .hero-image {
   position: relative;
   animation: fadeInRight 1s ease-out;
-  z-index: 1;
+  z-index: 0;
 }
 
 @keyframes fadeInRight {
@@ -535,12 +544,6 @@
   animation: pulseGlow 10s ease-in-out infinite;
 }
 
-@media (max-width: 768px) {
-  .image-container::before {
-    animation: pulseGlow 10s ease-in-out infinite !important;
-  }
-}
-
 @keyframes pulseGlow {
   0%, 100% {
     opacity: 0.5;
@@ -576,6 +579,13 @@
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .tech-circle {
+    width: clamp(180px, 60vw, 250px);
+    height: clamp(180px, 60vw, 250px);
+  }
+}
+
 @media (max-width: 480px) {
   .tech-circle {
     width: 180px;
@@ -590,13 +600,7 @@
 .tech-icon {
   font-size: clamp(2.5rem, 8vw, 5rem);
   margin-bottom: 1rem;
-  animation: rotateIcon 25s linear infinite;
-}
-
-@media (max-width: 768px) {
-  .tech-icon {
-    animation: rotateIcon 25s linear infinite !important;
-  }
+  animation: rotateIcon 40s linear infinite;
 }
 
 @keyframes rotateIcon {
@@ -624,6 +628,13 @@
   pointer-events: none;
 }
 
+@media (max-width: 768px) {
+  .floating-tech {
+    width: clamp(160px, 50vw, 220px);
+    height: clamp(160px, 50vw, 220px);
+  }
+}
+
 @media (max-width: 480px) {
   .floating-tech {
     width: 160px;
@@ -642,13 +653,15 @@
   display: flex;
   align-items: center;
   gap: clamp(0.3rem, 1vw, 0.8rem);
-  animation: floatAround 20s ease-in-out infinite;
+  animation: floatAround 50s ease-in-out infinite;
   transition: all 0.3s ease;
 }
 
 @media (max-width: 768px) {
   .tech-badge {
-    animation: floatAround 20s ease-in-out infinite !important;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    animation: floatAround 55s ease-in-out infinite !important;
   }
 }
 
@@ -656,7 +669,7 @@
   .tech-badge {
     padding: 0.35rem 0.5rem;
     border-radius: 6px;
-    animation: floatAround 20s ease-in-out infinite !important;
+    animation: floatAround 55s ease-in-out infinite !important;
   }
 }
 
@@ -684,6 +697,24 @@
   transform: translateY(-50%);
 }
 
+@media (max-width: 768px) {
+  .tech-badge:nth-child(1) {
+    top: -3px;
+  }
+  
+  .tech-badge:nth-child(2) {
+    right: -28px;
+  }
+  
+  .tech-badge:nth-child(3) {
+    bottom: -3px;
+  }
+  
+  .tech-badge:nth-child(4) {
+    left: -28px;
+  }
+}
+
 @media (max-width: 480px) {
   .tech-badge:nth-child(1) {
     top: -3px;
@@ -707,6 +738,12 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
+@media (max-width: 480px) {
+  .tech-badge span {
+    font-size: 0.9rem;
+  }
+}
+
 .tech-badge p {
   color: white;
   font-weight: 600;
@@ -728,15 +765,19 @@
 @keyframes floatAround {
   0%, 100% {
     transform: translate(0, 0);
+    opacity: 1;
   }
   25% {
-    transform: translate(10px, -10px);
+    transform: translate(8px, -8px);
+    opacity: 0.9;
   }
   50% {
-    transform: translate(-5px, 5px);
+    transform: translate(-4px, 4px);
+    opacity: 0.95;
   }
   75% {
-    transform: translate(5px, 10px);
+    transform: translate(4px, 8px);
+    opacity: 0.9;
   }
 }
 

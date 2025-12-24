@@ -385,55 +385,63 @@
 /* Zig-Zag Animations for Mobile - Vertical movement along horizontal line */
 @media (max-width: 768px) {
   .orbit-1 {
-    animation: zigzag1 5s ease-in-out infinite;
+    animation: zigzag1 8s ease-in-out infinite !important;
   }
 
   .orbit-2 {
-    animation: zigzag2 5s ease-in-out infinite;
+    animation: zigzag2 8s ease-in-out infinite !important;
   }
 
   .orbit-3 {
-    animation: zigzag3 5s ease-in-out infinite;
+    animation: zigzag3 8s ease-in-out infinite !important;
   }
 
   .orbit-4 {
-    animation: zigzag4 5s ease-in-out infinite;
+    animation: zigzag4 8s ease-in-out infinite !important;
   }
 }
 
 @keyframes zigzag1 {
   0%, 100% {
-    transform: translate(-120px, 0);
+    transform: translate(-120px, 0) scale(1);
+    opacity: 0.9;
   }
   50% {
-    transform: translate(-120px, -50px);
+    transform: translate(-120px, -45px) scale(1.05);
+    opacity: 1;
   }
 }
 
 @keyframes zigzag2 {
   0%, 100% {
-    transform: translate(-40px, -50px);
+    transform: translate(-40px, -45px) scale(1);
+    opacity: 0.9;
   }
   50% {
-    transform: translate(-40px, 0);
+    transform: translate(-40px, 0) scale(1.05);
+    opacity: 1;
   }
 }
 
 @keyframes zigzag3 {
   0%, 100% {
-    transform: translate(40px, 0);
+    transform: translate(40px, 0) scale(1);
+    opacity: 0.9;
   }
   50% {
-    transform: translate(40px, -50px);
+    transform: translate(40px, -45px) scale(1.05);
+    opacity: 1;
   }
 }
 
 @keyframes zigzag4 {
   0%, 100% {
-    transform: translate(120px, -50px);
+    transform: translate(120px, -45px) scale(1);
+    opacity: 0.9;
   }
   50% {
-    transform: translate(120px, 0);
+    transform: translate(120px, 0) scale(1.05);
+    opacity: 1;
   }
 }
 
