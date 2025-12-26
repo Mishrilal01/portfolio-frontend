@@ -581,15 +581,13 @@
 
 @media (max-width: 768px) {
   .tech-circle {
-    width: clamp(180px, 60vw, 250px);
-    height: clamp(180px, 60vw, 250px);
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
   .tech-circle {
-    width: 180px;
-    height: 180px;
+    display: none;
   }
 }
 
@@ -630,15 +628,13 @@
 
 @media (max-width: 768px) {
   .floating-tech {
-    width: clamp(160px, 50vw, 220px);
-    height: clamp(160px, 50vw, 220px);
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
   .floating-tech {
-    width: 160px;
-    height: 160px;
+    display: none;
   }
 }
 
