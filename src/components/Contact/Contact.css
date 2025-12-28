@@ -91,6 +91,15 @@
     padding: 0.875rem;
     font-size: 1rem;
   }
+
+  /* Stack verification buttons on small screens */
+  .verification-actions {
+    flex-direction: column;
+  }
+
+  .verification-actions button {
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 360px) {
@@ -186,6 +195,94 @@
   width: 100%;
 }
 
+/* Override button styles for contact form - Simple & Clean */
+.contact-form .btn-primary {
+  background: #6366f1 !important;
+  color: white !important;
+  border: 2px solid #6366f1 !important;
+  font-weight: 600 !important;
+  padding: 1rem 2rem !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.contact-form .btn-primary:hover:not(:disabled) {
+  background: #4f46e5 !important;
+  border-color: #4f46e5 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3) !important;
+}
+
+.contact-form .btn-primary:disabled {
+  background: #cbd5e1 !important;
+  border-color: #cbd5e1 !important;
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+}
+
+.contact-form .btn-secondary {
+  background: white !important;
+  color: #6366f1 !important;
+  border: 2px solid #6366f1 !important;
+  font-weight: 600 !important;
+  padding: 0.875rem 1.5rem !important;
+  border-radius: 8px !important;
+  font-size: 0.95rem !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.contact-form .btn-secondary:hover:not(:disabled) {
+  background: #6366f1 !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3) !important;
+}
+
+.contact-form .btn-secondary:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+/* Dark theme button adjustments */
+[data-theme="dark"] .contact-form .btn-secondary {
+  background: transparent !important;
+  color: white !important;
+  border-color: #6366f1 !important;
+}
+
+[data-theme="dark"] .contact-form .btn-secondary:hover:not(:disabled) {
+  background: #6366f1 !important;
+  color: white !important;
+}
+
+/* Verification hint text */
+.verification-hint {
+  color: var(--text-secondary, rgba(0, 0, 0, 0.6)) !important;
+  font-size: 0.85rem !important;
+  margin-top: 0.5rem !important;
+  display: block !important;
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .verification-hint {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+[data-theme="dark"] .contact-form .btn-secondary {
+  color: white !important;
+}
+
 /* Status Messages */
 .form-status {
   padding: 1rem;
@@ -216,6 +313,124 @@
   background: rgba(239, 68, 68, 0.1);
   border: 2px solid #ef4444;
   color: #ef4444;
+}
+
+.form-status.info {
+  background: rgba(59, 130, 246, 0.1);
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+}
+
+.form-status.warning {
+  background: rgba(245, 158, 11, 0.1);
+  border: 2px solid #f59e0b;
+  color: #f59e0b;
+}
+
+/* Verification Section */
+.verification-section {
+  animation: fadeIn 0.4s ease;
+}
+
+/* Verification Title and Subtitle - Works in both themes */
+.verification-title {
+  color: var(--text-primary, #1a1a1a);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.verification-subtitle {
+  color: var(--text-secondary, rgba(0, 0, 0, 0.7));
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Verification Actions - Buttons in one row */
+.verification-actions {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.verification-actions button {
+  flex: 1;
+  width: auto !important;
+}
+
+/* Timer Display - Visible in both themes */
+.timer-display {
+  font-family: 'Courier New', monospace;
+  animation: pulse 2s ease-in-out infinite;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+/* Timer Warning */
+.timer-warning {
+  color: #ef4444;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Verification Input */
+.verification-input {
+  text-align: center !important;
+  font-size: 1.5rem !important;
+  letter-spacing: 0.5rem !important;
+}
+
+/* Verify Button - Full width with proper styling */
+.verify-button {
+  width: 100% !important;
+  margin-bottom: 1rem !important;
+  background: var(--primary-color, #6366f1) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 1rem !important;
+}
+
+.verify-button:hover:not(:disabled) {
+  background: var(--primary-hover, #4f46e5) !important;
+  transform: translateY(-2px);
+}
+
+.verify-button:disabled {
+  background: #9ca3af !important;
+  cursor: not-allowed !important;
+}
+
+/* Sending State */
+.sending-state {
+  text-align: center;
+  padding: 2rem;
+}
+
+.sending-text {
+  color: var(--text-primary, #1a1a1a);
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Loading Spinner */
