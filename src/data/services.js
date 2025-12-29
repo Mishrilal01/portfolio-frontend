@@ -31,38 +31,39 @@ export const servicesData = [
       'Performance Optimization',
       'Cross-browser Compatibility'
     ]
-  },
-  {
-    icon: '📱',
-    title: 'Mobile Development',
-    description: 'Creating mobile-first applications with seamless user experiences.',
-    features: [
-      'Progressive Web Apps',
-      'React Native Development',
-      'Mobile UI/UX Design',
-      'App Optimization'
-    ]
-  },
-  {
-    icon: '🎨',
-    title: 'UI/UX Design',
-    description: 'Designing intuitive and beautiful user interfaces that engage users.',
-    features: [
-      'User Interface Design',
-      'User Experience Design',
-      'Prototyping',
-      'Wireframing'
-    ]
-  },
-  {
-    icon: '📊',
-    title: 'Consulting',
-    description: 'Providing technical consultation and project planning services.',
-    features: [
-      'Technology Stack Selection',
-      'Architecture Planning',
-      'Code Review',
-      'Performance Audit'
-    ]
   }
+  // ,
+  // {
+  //   icon: '📱',
+  //   title: 'Mobile Development',
+  //   description: 'Creating mobile-first applications with seamless user experiences.',
+  //   features: [
+  //     'Progressive Web Apps',
+  //     'React Native Development',
+  //     'Mobile UI/UX Design',
+  //     'App Optimization'
+  //   ]
+  // },
+  // {
+  //   icon: '🎨',
+  //   title: 'UI/UX Design',
+  //   description: 'Designing intuitive and beautiful user interfaces that engage users.',
+  //   features: [
+  //     'User Interface Design',
+  //     'User Experience Design',
+  //     'Prototyping',
+  //     'Wireframing'
+  //   ]
+  // },
+  // {
+  //   icon: '📊',
+  //   title: 'Consulting',
+  //   description: 'Providing technical consultation and project planning services.',
+  //   features: [
+  //     'Technology Stack Selection',
+  //     'Architecture Planning',
+  //     'Code Review',
+  //     'Performance Audit'
+  //   ]
+  // }
 ];

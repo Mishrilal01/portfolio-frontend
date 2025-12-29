@@ -6,7 +6,7 @@ const Services = () => {
   return (
     <section id="services" className="services">
       <div className="container">
-        <h2 className="section-title" data-aos="fade-up">My Services</h2>
+        <h2 className="section-title" data-aos="fade-up">What I Can Help With</h2>
         <div className="services-grid">
           {servicesData.map((service, index) => (
             <div 

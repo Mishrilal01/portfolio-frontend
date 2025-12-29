@@ -21,6 +21,12 @@ const ProjectCard = ({ project, index }) => {
       <div className="project-content">
         <h3>{project.title}</h3>
         <p>{project.description}</p>
+        {project.outcome && (
+          <div className="project-outcome">
+            <span className="outcome-icon">🎯</span>
+            <p>{project.outcome}</p>
+          </div>
+        )}
         <div className="project-tags">
           {project.tags.map((tag, i) => (
             <span key={i} className="tag">{tag}</span>

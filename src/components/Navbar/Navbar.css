@@ -79,8 +79,9 @@
   align-items: center;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   position: relative;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.25rem 0.5rem 1rem;
   border-radius: 12px;
+  overflow: visible;
 }
 
 .navbar-logo a::before {
@@ -113,9 +114,11 @@
   background-clip: text;
   background-size: 200% auto;
   animation: gradientShift 3s ease infinite;
-  font-family: 'Lucida Handwriting', cursive;
-  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-style: normal;
   letter-spacing: 1px;
+  display: inline-block;
 }
 
 @keyframes gradientShift {

@@ -75,11 +75,11 @@ const Footer = () => {
             <div className="footer-contact">
               <div className="contact-item">
                 <span className="contact-icon">📧</span>
-                <span>mishrilalparihar30221@gmail.com</span>
+                <a href="mailto:mishrilalparihar30221@gmail.com">mishrilalparihar30221@gmail.com</a>
               </div>
               <div className="contact-item">
                 <span className="contact-icon">📱</span>
-                <span>+91 73571 30221</span>
+                <a href="tel:+917357130221">+91 73571 30221</a>
               </div>
               <div className="contact-item">
                 <span className="contact-icon">📍</span>
@@ -96,11 +96,11 @@ const Footer = () => {
             &copy; {currentYear} <span className="gradient-text">Mishrilal Parihar</span>. All rights reserved.
           </p>
           <div className="footer-bottom-links">
-            <a href="#privacy">Privacy Policy</a>
+            <a href="/privacy-policy">Privacy Policy</a>
             <span className="separator">•</span>
-            <a href="#terms">Terms of Service</a>
+            <a href="/terms-of-service">Terms of Service</a>
             <span className="separator">•</span>
-            <a href="#sitemap">Sitemap</a>
+            <a href="/sitemap">Sitemap</a>
           </div>
         </div>
       </div>

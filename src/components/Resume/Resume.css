@@ -143,6 +143,58 @@
   margin-top: 1rem;
 }
 
+.resume-highlights {
+  margin-top: 1.5rem;
+}
+
+.highlight-section {
+  margin-bottom: 1rem;
+}
+
+.highlight-section h5 {
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tools-list li {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tools-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.outcome-text {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0.8rem;
+  background: rgba(99, 102, 241, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid var(--primary-color);
+}
+
 .resume-download {
   text-align: center;
   margin-top: 3rem;

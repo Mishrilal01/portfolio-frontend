@@ -18,7 +18,9 @@ const Resume = () => {
       position: 'Data Science Intern',
       company: 'Unified Mentor Private Limited',
       year: 'August 2025 - September 2025',
-      description: 'Completed one month virtual internship focused on data analysis, machine learning projects, and statistical modeling.'
+      description: 'Completed one month virtual internship focused on data analysis, machine learning projects, and statistical modeling.',
+      tools: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'Jupyter Notebook'],
+      outcome: 'Successfully completed a real-world data science project, gaining practical insights into applying technical skills in professional settings and developing strong team collaboration abilities.'
     }
   ];
 
@@ -64,6 +66,28 @@ const Resume = () => {
                   <h4>{item.company}</h4>
                   <span className="year">{item.year}</span>
                   <p>{item.description}</p>
+                  
+                  {item.tools && (
+                    <div className="resume-highlights">
+                      <div className="highlight-section">
+                        <h5>🛠️ Tools Used:</h5>
+                        <ul className="tools-list">
+                          {item.tools.map((tool, i) => (
+                            <li key={i}>{tool}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {item.outcome && (
+                    <div className="resume-highlights">
+                      <div className="highlight-section">
+                        <h5>🎯 Outcome/Result:</h5>
+                        <p className="outcome-text">{item.outcome}</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

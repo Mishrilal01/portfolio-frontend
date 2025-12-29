@@ -1,5 +1,5 @@
 .hero {
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,7 +8,7 @@
   background: var(--gradient-animated);
   background-size: 400% 400%;
   animation: gradientFlow 30s ease infinite;
-  padding: 10rem 2rem 4rem;
+  padding: 6rem 2rem 3rem;
   z-index: 1;
 }
 
@@ -16,7 +16,7 @@
 @media (max-width: 968px) {
   .hero {
     min-height: auto;
-    padding: 6rem 1rem 3rem;
+    padding: 5rem 1rem 2rem;
     animation: gradientFlow 40s ease infinite !important;
   }
 
@@ -396,13 +396,17 @@
 }
 
 .btn-primary {
-  background: white;
-  color: #6366f1;
+  background: white !important;
+  color: #6366f1 !important;
+  border: 2px solid rgba(29, 28, 28, 0.3);
   box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
   font-weight: 700;
 }
 
 .btn-primary:hover {
+  background: white !important;
+  color: #6366f1 !important;
+  border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-5px);
   box-shadow: 0 15px 50px rgba(255, 255, 255, 0.5);
 }

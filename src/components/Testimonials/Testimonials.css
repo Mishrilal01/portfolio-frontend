@@ -131,4 +131,36 @@
 .testimonial-rating {
   color: #ffd700;
   font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #0077b5;
+  color: white !important;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.testimonial-linkedin:hover {
+  background: #005885;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+}
+
+.testimonial-linkedin:visited {
+  color: white !important;
+}
+
+.testimonial-linkedin svg {
+  width: 20px;
+  height: 20px;
 }
