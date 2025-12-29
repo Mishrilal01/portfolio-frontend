@@ -6,7 +6,7 @@ export const projectsData = [
     outcome: 'Achieved 87% prediction accuracy, reducing legal research time by 60% with semantic case retrieval',
     image: '/assets/images/photo-collage.jpg',
     liveUrl: 'https://example.com/inventory',
-    githubUrl: 'https://github.com/Mishrilal01/Cooking-Recipes-Site',
+    githubUrl: 'https://github.com/Mishrilal01/AI-POWERED-JUDICIAL-OUTCOME-PREDICTION-CASE-RETRIEVAL',
     tags: ['NLP', 'Deep Learning', 'BERT', 'Transformers', 'PyTorch', 'scikit-learn'
  ,'Feature Engineering', 'Data Preprocessing',
  ],
