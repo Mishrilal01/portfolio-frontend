@@ -132,7 +132,7 @@ export const projectsData = [
     outcome: 'Analyzed 10 years of accident data, identified 3 key risk factors for safety improvements',
     image: '/assets/images/railaccident.jpg',
     liveUrl: 'https://public.powerbi.com/mishrilal',
-    githubUrl: 'https://github.com/Mishrilal01/Amazon-Sales-Analytics-Dashboard',
+    githubUrl: 'https://github.com/Mishrilal01/Highway-Rail-Accident-Performance-Dashboard',
     tags: ['DAX Functions', 'Power Query', 'Data Modeling', 'Dynamic Measures','Time-Series',"Bookmarks"],
     category: 'data-visualization',
     featured: false
